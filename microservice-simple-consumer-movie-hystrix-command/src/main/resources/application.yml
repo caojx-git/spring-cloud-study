@@ -1,0 +1,27 @@
+server:
+  port: 8010
+
+spring:
+  application:
+    # 指定注册到eureka server上的服务名称，对于电影微服务，本系列将名称设为microservice-simple-consumer-movie-hystrix-command
+    name: microservice-simple-consumer-movie-hystrix-command
+
+eureka:
+  client:
+    service-url:
+      # 指定eureka server通信地址，注意/eureka/小尾巴不能少
+      defaultZone: http://user:password123@localhost:8761/eureka/
+  instance:
+    # 是否注册IP到eureka server，如不指定或设为false，那就会注册主机名到eureka server
+    prefer-ip-address: true
+
+management:
+  endpoint:
+    health:
+      # 是否展示健康检查详情
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        #应用整合Hystrix，同时应用包含spring-boot-starter-actuator 依赖，就会存在一个/actuator/hystrix.stream 端点，用来监控Hystrix Command。当被@HystrixCommand 注解了的方法被调用时，就会产生监控信息，并暴露到该端点中。当然，该端点默认是不会暴露的，需使用如下配置将其暴露，访问/actuator/hystrix.stream 可返回监控结果。
+        include: hystrix.stream

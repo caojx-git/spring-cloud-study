@@ -1,0 +1,22 @@
+server:
+  port: 8010
+
+spring:
+  application:
+    name: microservice-simple-consumer-movie-feign-config-java #应用名
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://user:password123@localhost:8761/eureka/  #eureka服务注册地址
+  instance:
+    prefer-ip-address: true
+
+management:
+  endpoint:
+    health:
+      show-details: always # 是否展示健康检查详情
+
+logging:
+  level: #在application.yml 中添加以下内容，将该Feign接口的日志级别设置为DEBUG
+    caojx.learn.microservicesimpleconsumermoviefeignconfigjava.feign.UserFeignConfig: debug

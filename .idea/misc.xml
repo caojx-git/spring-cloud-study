@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice-simple-consumer-movie-feign/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice-simple-consumer-movie-feign-config-java/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice-simple-consumer-movie-feign-config-properties/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice-simple-consumer-movie-feign-hystrix/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice-simple-consumer-movie-hystrix-command/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice-simple-consumer-movie-ribbon/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice-simple-discovery-eureka/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice-simple-provider-user/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice-simple-consumer-movie-ribbon-config-java/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice-simple-consumer-movie-ribbon-config-properties/pom.xml" />
+        <option value="$PROJECT_DIR$/mircroservice-simple-consumer-movie-feign-hystrix-fallback-factory/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice-simple-consumer-movie-feign-hystrix-stream/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice-simple-hystrix-dashboard/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice-simple-gateway-zuul/pom.xml" />
+        <option value="$PROJECT_DIR$/microserivce-simple-gateway-zuul-fallback/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice-simple-config-client/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice-simple-config-server/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

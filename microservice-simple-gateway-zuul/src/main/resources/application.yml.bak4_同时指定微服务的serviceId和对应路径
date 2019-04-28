@@ -1,0 +1,36 @@
+server:
+  port: 8040
+
+spring:
+  application:
+    # 指定注册到eureka server上的服务名称，对于电影微服务，本系列将名称设为microservice-simple-gateway-zuul
+    name: microservice-simple-gateway-zuul
+  main:
+    allow-bean-definition-overriding: true
+
+eureka:
+  client:
+    service-url:
+      # 指定eureka server通信地址，注意/eureka/小尾巴不能少
+      defaultZone: http://user:password123@localhost:8761/eureka/
+  instance:
+    # 是否注册IP到eureka server，如不指定或设为false，那就会注册主机名到eureka server
+    prefer-ip-address: true
+
+#可以访问http://localhost:8040/actuator/hystrix.stream查看相应的信息
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+
+#很多场景下，我们可能只想要让Zuul代理指定的微服务，此时可以将zuul.ignored-services 设为’*’
+#本例配置的效果同示例(1)
+zuul:
+  routes:
+    user-route:                   # 该配置方式中，user-route只是给路由一个名称，可以任意起名。
+      service-id: microservice-simple-provider-user
+      path: /user/**              # service-id对应的路径

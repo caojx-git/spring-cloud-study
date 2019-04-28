@@ -1,0 +1,11 @@
+//借助PatternServiceRouteMapper，实现从微服务到映射路由的正则配置。例如：
+
+@Bean
+public PatternServiceRouteMapper serviceRouteMapper() {
+  // 调用构造函数PatternServiceRouteMapper(String servicePattern, String routePattern)
+  // servicePattern指定微服务的正则
+  // routePattern指定路由正则
+  return new PatternServiceRouteMapper("(?<name>^.+)-(?<version>v.+$)", "${version}/${name}");
+}
+
+//通过这段代码即可实现将诸如microservice-provider-user-v1这个微服务，映射到/v1/microservice-provider-user/**这个路径。

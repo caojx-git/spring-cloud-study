@@ -1,0 +1,44 @@
+server:
+  # 指定Tomcat端口
+  port: 8000
+
+spring:
+  jpa:
+    # 让hibernate打印执行的SQL
+    show-sql: true
+    # 指定注册到eureka server上的服务名称，对于用户微服务，本系列将名称设为microservice-simple-provider-user
+  application:
+    name: microservice-simple-provider-user
+  main:
+    # 当遇到同样名字的时候是否允许覆盖并注册
+    allow-bean-definition-overriding: true
+
+eureka:
+  client:
+    service-url:
+      # 指定eureka server通信地址，注意/eureka/小尾巴不能少
+      defaultZone: http://user:password123@localhost:8761/eureka/
+  instance:
+    # 是否注册IP到eureka server，如不指定或设为false，那就会注册主机名到eureka server
+    prefer-ip-address: true
+
+logging:
+  level:
+    root: INFO
+    # 配置日志级别，让hibernate打印出执行的SQL参数
+    org.hibernate: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+
+management:
+  endpoint:
+    health:
+      # 是否展示健康检查详情
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        # 默认情况下，敏感路径并不暴露。如需暴露（以metrics为例），需添加配置
+        # 暴露metrics端点，如需暴露多个，用,分隔；如需暴露所有端点，用'*'
+        include: metrics
+

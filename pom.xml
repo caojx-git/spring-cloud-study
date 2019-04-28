@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- 引入spring boot的依赖 -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.8.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <groupId>caojx.learn</groupId>
+    <artifactId>spring-cloud-study</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>spring-cloud-study</name>
+    <description>Demo project for Spring Boot</description>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>microservice-simple-provider-user</module>
+        <module>microservice-simple-consumer-movie</module>
+        <module>microservice-simple-discovery-eureka</module>
+        <module>microservice-simple-consumer-movie-ribbon</module>
+        <module>microservice-simple-consumer-movie-ribbon-config-java</module>
+        <module>microservice-simple-consumer-movie-ribbon-config-properties</module>
+        <module>microservice-simple-consumer-movie-feign</module>
+        <module>microservice-simple-consumer-movie-feign-config-java</module>
+        <module>microservice-simple-consumer-movie-feign-config-properties</module>
+        <module>microservice-simple-consumer-movie-hystrix-command</module>
+        <module>microservice-simple-consumer-movie-feign-hystrix</module>
+        <module>microservice-simple-consumer-movie-feign-hystrix-fallback-factory</module>
+        <module>microservice-simple-consumer-movie-feign-hystrix-stream</module>
+        <module>microservice-simple-hystrix-dashboard</module>
+        <module>microservice-simple-hystrix-turbine</module>
+        <module>microservice-simple-gateway-zuul</module>
+        <module>microservice-simple-gateway-zuul-fallback</module>
+        <module>microservice-simple-config-server</module>
+        <module>microservice-simple-config-client</module>
+    </modules>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <!-- 引入spring cloud的依赖，不能少，主要用来管理Spring Cloud生态各组件的版本 -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Finchley.SR2</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <!--公共依赖-->
+    <dependencies>
+        <!-- 引入Lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+
+    <!-- 添加spring-boot的maven插件，不能少，打jar包时得用 -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
