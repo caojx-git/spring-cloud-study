@@ -1,5 +1,5 @@
 server:
-  port: 8010
+  port: 8012
 
 spring:
   application:
@@ -24,4 +24,4 @@ management:
     web:
       exposure:
         #应用整合Hystrix，同时应用包含spring-boot-starter-actuator 依赖，就会存在一个/actuator/hystrix.stream 端点，用来监控Hystrix Command。当被@HystrixCommand 注解了的方法被调用时，就会产生监控信息，并暴露到该端点中。当然，该端点默认是不会暴露的，需使用如下配置将其暴露，访问/actuator/hystrix.stream 可返回监控结果。
-        include: hystrix.stream
+        include: 'hystrix.stream'

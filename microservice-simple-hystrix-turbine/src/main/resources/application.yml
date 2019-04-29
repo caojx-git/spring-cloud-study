@@ -13,8 +13,8 @@ eureka:
   instance:
     # 是否注册IP到eureka server，如不指定或设为false，那就会注册主机名到eureka server
     prefer-ip-address: true
-
+#可以在http://localhost:8030/hystrix中输入http://localhost:8031/turbine.stream进行监控
 turbine:
   # 要监控的微服务列表，多个用,分隔
-  appConfig: microservice-simple-consumer-movie,microservice-simple-consumer-movie-feign
+  appConfig: microservice-simple-consumer-movie-feign-hystrix-stream,microservice-simple-consumer-movie-hystrix-command
   clusterNameExpression: "'default'"

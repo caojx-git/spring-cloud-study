@@ -1,0 +1,10 @@
+server:
+  port: 8081
+
+#暴露/actuator/refresh 端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
+

@@ -1,0 +1,8 @@
+#生成jks文件命令如下，执行以下命令，并按照提示操作，即可创建一个Key Store
+#keytool -genkey -alias keystore.jks -keyalg RSA -dname "CN=Web Server,OU=Unit,O=Organization,L=City,S=State,C=US" -keystore keystore.jks -storepass letmein
+encrypt:
+  keyStore:
+    location: classpath:keystore.jks # jks文件的路径
+    password: letmein               # storepass
+    alias: keystore.jks                # alias
+    #secret: changeme                # keypass

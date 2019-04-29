@@ -7,8 +7,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.8.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <version>2.1.0.RELEASE</version>
     </parent>
 
     <groupId>caojx.learn</groupId>
@@ -38,6 +37,10 @@
         <module>microservice-simple-gateway-zuul-fallback</module>
         <module>microservice-simple-config-server</module>
         <module>microservice-simple-config-client</module>
+        <module>microservice-simple-config-server-encryption</module>
+        <module>microservice-simple-config-server-encryption-rsa</module>
+        <module>microservice-simple-provider-user-sleuth</module>
+        <module>microservice-simple-provider-user-sleuth-zipkin</module>
     </modules>
 
     <properties>
@@ -55,6 +58,7 @@
                 <scope>import</scope>
             </dependency>
         </dependencies>
+
     </dependencyManagement>
 
     <!--公共依赖-->

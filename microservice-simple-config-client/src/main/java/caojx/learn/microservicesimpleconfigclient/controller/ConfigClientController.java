@@ -13,10 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class ConfigClientController {
+
     @Value("${profile}")
     private String profile;
 
-    @GetMapping("/profile")
+    @GetMapping("/hello")
     public String hello() {
         return this.profile;
     }

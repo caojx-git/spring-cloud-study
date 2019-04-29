@@ -1,0 +1,15 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: microservice-config-server-encryption-rsa
+  cloud:
+    config:
+      server:
+        git:
+          # Git仓库地址，用于存放配置文件
+          uri: https://github.com/caojx-git/spring-cloud-config-repo.git
+          # Git仓库账号
+          username: caojx_wy@163.com
+          # Git仓库密码
+          password: Github389715062
